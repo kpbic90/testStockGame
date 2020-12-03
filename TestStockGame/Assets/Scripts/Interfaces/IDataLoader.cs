@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.Models;
 
 namespace Assets.Scripts.Interfaces
 {
     public interface IDataLoader
     {
         void Init(string connStr);
-        IEnumerable<IUser> GetUsers();
-        IEnumerable<IItem> GetItems();
-        IEnumerable<IStockItem> GetStockData();
+        List<User> GetUsers();
+        List<Item> GetItems();
+        List<StockItem> GetStockData();
     }
 }

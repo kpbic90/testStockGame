@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using Assets.Scripts.Interfaces;
+using Assets.Scripts.Models;
 using UnityEngine;
 
-namespace Assets.Scripts.Engine
+namespace Assets.Scripts.Engine.DataManagment
 {
     public class JsonDataLoader : IDataLoader
     {
@@ -14,36 +15,36 @@ namespace Assets.Scripts.Engine
             _url = connStr;
         }
 
-        public IEnumerable<IUser> GetUsers()
+        public List<User> GetUsers()
         {
             using (var wc = new WebClient())
             {
                 var url = $"{_url}/users.json";
                 var response = wc.DownloadString(url);
-                var users = JsonUtility.FromJson<IEnumerable<IUser>>(response);
-                return users;
+                var data = JsonUtility.FromJson<UsersCollection>(response);
+                return data.users;
             }
         }
 
-        public IEnumerable<IItem> GetItems()
+        public List<Item> GetItems()
         {
             using (var wc = new WebClient())
             {
                 var url = $"{_url}/items.json";
                 var response = wc.DownloadString(url);
-                var items = JsonUtility.FromJson<IEnumerable<IItem>>(response);
-                return items;
+                var data = JsonUtility.FromJson<ItemsCollection>(response);
+                return data.items;
             }
         }
 
-        public IEnumerable<IStockItem> GetStockData()
+        public List<StockItem> GetStockData()
         {
             using (var wc = new WebClient())
             {
                 var url = $"{_url}/stock.json";
                 var response = wc.DownloadString(url);
-                var stockData = JsonUtility.FromJson<IEnumerable<IStockItem>>(response);
-                return stockData;
+                var data = JsonUtility.FromJson<StockItemsCollection>(response);
+                return data.stockItems;
             }
         }
     }

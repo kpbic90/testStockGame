@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Assets.Scripts.Models
 {
     [Serializable]
-    public class Item : IItem
+    public class Item
     {
         public Guid Id { get => Guid.Parse(id); set => id = value.ToString(); }
         public string Name { get => name; set => name = value; }

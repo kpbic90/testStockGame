@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Interfaces;
+﻿using Assets.Scripts.Models;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,19 +7,19 @@ namespace Assets.Scripts.UI
 {
     public class StockItemScript : MonoBehaviour
     {
-        [SerializeField] private Text textItemName;
-        [SerializeField] private Text textItemCost;
-        [SerializeField] private Text textItemCount;
-        [SerializeField] private Text textTraderName;
-        [SerializeField] private Text textTraderLevel;
         [SerializeField] private Image imageItem;
         [SerializeField] private Image imageSeller;
 
-        public IStockItem stockItem;
+        public StockItem stockItem;
+        [SerializeField] private TextMeshProUGUI textItemCost;
+        [SerializeField] private TextMeshProUGUI textItemCount;
+        [SerializeField] private TextMeshProUGUI textItemName;
+        [SerializeField] private TextMeshProUGUI textTraderLevel;
+        [SerializeField] private TextMeshProUGUI textTraderName;
 
-        void Start()
+        private void Start()
         {
-            if(stockItem == null)
+            if (stockItem == null)
                 return;
 
             //textItemName.text = stockItem.Item.Name;
@@ -28,8 +29,6 @@ namespace Assets.Scripts.UI
 
             //textTraderName.text = stockItem.Trader.Name;
             //textTraderLevel.text = stockItem.Trader.Level.ToString();
-            
         }
     }
-
 }

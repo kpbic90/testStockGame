@@ -1,11 +1,10 @@
 ﻿using System;
-using Assets.Scripts.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Models
 {
     [Serializable]
-    public class StockItem : IStockItem
+    public class StockItem 
     {
         public Guid Id { get => Guid.Parse(id); set => id = value.ToString(); }
         public Guid ItemId { get => Guid.Parse(item); set => item = value.ToString(); }

@@ -1,47 +1,86 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Assets.Scripts.Engine;
-using Assets.Scripts.Interfaces;
+﻿using System.Collections.Generic;
+using Assets.Scripts.Models;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
 {
     public class WindowStockScript : MonoBehaviour
     {
+        public delegate void HandleRefreshListCall(WindowStockScript sender);
+
         [SerializeField] private Transform holderStockItems;
+        private List<Item> items;
+
         [SerializeField] private GameObject prefabStockItem;
 
-        private IEnumerable<IStockItem> stockData;
-        private int currentPage = 0;
-        private const int ItemsAtPage = 6;
+        private List<StockItem> stockData;
+        private List<User> users;
 
-        void Start()
+        public List<StockItem> StockData
         {
-            var dataLoader = new JsonDataLoader();
-            dataLoader.Init("");
+            set
+            {
+                stockData = value;
+                DrawItems();
+            }
         }
+
+        public List<Item> Items
+        {
+            set => items = value;
+        }
+
+        public List<User> Users
+        {
+            set => users = value;
+        }
+
+        public event HandleRefreshListCall OnRefreshListCall;
 
         public void NextPage()
         {
-            if(currentPage >= (int)(stockData.Count() / ItemsAtPage))
-                return;
 
-            currentPage++;
         }
 
         public void PrevPage()
         {
-            if(currentPage == 0)
-                return;
-            
-            currentPage--;
+
         }
 
         public void Close()
         {
             Destroy(gameObject);
+        }
+
+        private void DrawItems()
+        {
+            ClearItems();
+
+            if(stockData == null)
+                return;
+
+            foreach (var item in stockData)
+            {
+                InitItem(item);
+            }
+        }
+
+        private void ClearItems()
+        {
+            var children = new List<GameObject>();
+            foreach (Transform child in holderStockItems)
+                children.Add(child.gameObject);
+            children.ForEach(child => Destroy(child));
+        }
+
+        private void InitItem(StockItem item)
+        {
+            var go = Instantiate(prefabStockItem
+                , new Vector3()
+                , Quaternion.identity, holderStockItems);
+
+            var script = go.GetComponent<StockItemScript>();
+            script.stockItem = item;
         }
     }
 }

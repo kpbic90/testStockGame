@@ -46,12 +46,12 @@ namespace Assets.Scripts.Utilities
         private ItemsCollection GenerateItems()
         {
             var result = new List<Item>();
-            for (var i = 0; i < sprites.Length; i++)
+            foreach (var t in sprites)
                 result.Add(new Item
                 {
                     Id = Guid.NewGuid(),
-                    Name = sprites[i].name,
-                    ImageName = sprites[i].name
+                    Name = t.name,
+                    ImageName = t.name
                 });
 
             return new ItemsCollection {items = result};
