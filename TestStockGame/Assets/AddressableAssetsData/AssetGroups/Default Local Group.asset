@@ -16,7 +16,31 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 760712238f6ad364098671af0b750909
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 1fba1a49995d4ad40bbc72dabc84401f
+    m_Address: Mushrooms
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 43fdceb1e7827b241bb2fd56b2dbf3ca
+    m_Address: Corn
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7ec0ff3b5c96252468ade6aaf07924fd
+    m_Address: Wheat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ce90aa66c976d2947b68555a68e8bc22
+    m_Address: Butter
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e0b7817039be27747a671d6fcddec95f, type: 2}
   m_SchemaSet:

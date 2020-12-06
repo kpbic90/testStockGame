@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Engine.DataManagment;
+﻿using System;
+using Assets.Scripts.Engine.DataManagment;
 using Assets.Scripts.UI;
 using UnityEngine;
 
@@ -26,6 +27,7 @@ namespace Assets.Scripts.Engine
             var windScript = wind.GetComponent<WindowStockScript>();
             windScript.OnRefreshListCall += WindScript_OnRefreshListCall;
 
+            windScript.lastResetDate = dataManager.LastResetDate;
             windScript.Users = dataManager.Users;
             windScript.Items = dataManager.Items;
             windScript.StockData = dataManager.StockData;
@@ -36,11 +38,16 @@ namespace Assets.Scripts.Engine
                 windScript.Items = dataManager.Items;
                 windScript.StockData = dataManager.StockData;
             };
+
+            dataManager.OnLastResetDateUpdated += () =>
+            {
+                windScript.lastResetDate = dataManager.LastResetDate;
+            };
         }
 
         private void WindScript_OnRefreshListCall(WindowStockScript sender)
         {
-            dataManager.UpdateStock();
+            dataManager.CallUpdateStock();
 
             sender.StockData = dataManager.StockData;
             sender.Items = dataManager.Items;

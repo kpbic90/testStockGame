@@ -56,21 +56,21 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Interfaces\IControlStrategy.cs" />
-    <Compile Include="Assets\Scripts\Engine\Control\MobileControlStrategy.cs" />
     <Compile Include="Assets\Scripts\Models\User.cs" />
-    <Compile Include="Assets\Scripts\Models\Item.cs" />
-    <Compile Include="Assets\Scripts\Models\StockItem.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IDataLoader.cs" />
-    <Compile Include="Assets\Scripts\Engine\DataManagment\JsonDataLoader.cs" />
+    <Compile Include="Assets\Scripts\Engine\DataManagment\DataManagerScript.cs" />
     <Compile Include="Assets\Scripts\UI\WindowStockScript.cs" />
+    <Compile Include="Assets\Scripts\Engine\DataManagment\JsonDataLoader.cs" />
+    <Compile Include="Assets\Scripts\Models\Item.cs" />
     <Compile Include="Assets\Scripts\UI\StockItemScript.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IDataLoader.cs" />
+    <Compile Include="Assets\Scripts\Models\StockItemsCollection.cs" />
+    <Compile Include="Assets\Scripts\Engine\DataManagment\SavedDataManager.cs" />
+    <Compile Include="Assets\Scripts\Models\UsersCollection.cs" />
+    <Compile Include="Assets\Scripts\Engine\GameUIManager.cs" />
     <Compile Include="Assets\Scripts\Utilities\JsonGeneratorScript.cs" />
     <Compile Include="Assets\Scripts\Models\ItemsCollection.cs" />
-    <Compile Include="Assets\Scripts\Models\UsersCollection.cs" />
-    <Compile Include="Assets\Scripts\Models\StockItemsCollection.cs" />
-    <Compile Include="Assets\Scripts\Engine\DataManagment\DataManagerScript.cs" />
-    <Compile Include="Assets\Scripts\Engine\GameUIManager.cs" />
+    <Compile Include="Assets\Scripts\Models\StockItem.cs" />
+    <Compile Include="Assets\Scripts\UI\Controls\MultiImageButton.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

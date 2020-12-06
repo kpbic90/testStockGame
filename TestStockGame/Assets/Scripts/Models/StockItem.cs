@@ -12,6 +12,9 @@ namespace Assets.Scripts.Models
         public int Count { get => count; set => count = value; }
         public int Price { get => price; set => price = value; }
 
+        public Item Item { get; set; }
+        public User User { get; set; }
+
         [SerializeField] private string id;
         [SerializeField] private string item;
         [SerializeField] private string trader;
