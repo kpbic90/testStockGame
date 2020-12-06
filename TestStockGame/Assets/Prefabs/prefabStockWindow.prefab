@@ -4175,6 +4175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7695461515568221868}
   - component: {fileID: 7695461515568221867}
+  - component: {fileID: 6465677993894213206}
   m_Layer: 5
   m_Name: prefabStockWindow
   m_TagString: Untagged
@@ -4219,10 +4220,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07584c83bcf48ec4abac888a59b74ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stockItemsDrawer: {fileID: 6465677993894213206}
+  textTimer: {fileID: 5558832083061206154}
+--- !u!114 &6465677993894213206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7695461515568221869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2fd52d92191f743851e6992ad31085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   holderStockItems: {fileID: 7695461514124806706}
   prefabStockItem: {fileID: 8457761874878978165, guid: 674639802cd988a48a2acd7716f04d71, type: 3}
   scrollRect: {fileID: 6129005927358207595}
-  textTimer: {fileID: 5558832083061206154}
 --- !u!1 &7695461515577966884
 GameObject:
   m_ObjectHideFlags: 0

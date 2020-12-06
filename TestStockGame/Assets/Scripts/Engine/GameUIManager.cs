@@ -28,14 +28,10 @@ namespace Assets.Scripts.Engine
             windScript.OnRefreshListCall += WindScript_OnRefreshListCall;
 
             windScript.lastResetDate = dataManager.LastResetDate;
-            windScript.Users = dataManager.Users;
-            windScript.Items = dataManager.Items;
             windScript.StockData = dataManager.StockData;
 
             dataManager.OnDataUpdated += () =>
             {
-                windScript.Users = dataManager.Users;
-                windScript.Items = dataManager.Items;
                 windScript.StockData = dataManager.StockData;
             };
 
@@ -50,8 +46,6 @@ namespace Assets.Scripts.Engine
             dataManager.CallUpdateStock();
 
             sender.StockData = dataManager.StockData;
-            sender.Items = dataManager.Items;
-            sender.Users = dataManager.Users;
         }
     }
 }

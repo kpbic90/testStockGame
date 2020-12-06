@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Models\ItemsCollection.cs" />
     <Compile Include="Assets\Scripts\Models\StockItem.cs" />
     <Compile Include="Assets\Scripts\UI\Controls\MultiImageButton.cs" />
+    <Compile Include="Assets\Scripts\Engine\StockItemsDrawer.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
