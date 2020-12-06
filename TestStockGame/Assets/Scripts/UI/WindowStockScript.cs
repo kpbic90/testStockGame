@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Assets.Scripts.Engine;
+using Assets.Scripts.Engine.InputSystem;
 using Assets.Scripts.Models;
 using TMPro;
 using UnityEngine;
@@ -16,6 +17,20 @@ namespace Assets.Scripts.UI
         public DateTime lastResetDate;
 
         [SerializeField] private TextMeshProUGUI textTimer;
+        public InputManagerScript inputManager;
+
+        private void Start()
+        {
+            if (inputManager)
+            {
+                inputManager.OnMove += InputManager_OnMove;
+            }
+        }
+
+        private void InputManager_OnMove(Vector2 move)
+        {
+            _stockItemsDrawer.MoveItems(move.x);
+        }
 
         public List<StockItem> StockData
         {
@@ -36,6 +51,7 @@ namespace Assets.Scripts.UI
 
         public void Close()
         {
+            inputManager.OnMove -= InputManager_OnMove;
             Destroy(gameObject);
         }
 

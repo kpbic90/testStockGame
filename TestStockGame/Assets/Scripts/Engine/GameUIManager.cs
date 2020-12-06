@@ -1,5 +1,6 @@
 ﻿using System;
 using Assets.Scripts.Engine.DataManagment;
+using Assets.Scripts.Engine.InputSystem;
 using Assets.Scripts.UI;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Assets.Scripts.Engine
     public class GameUIManager : MonoBehaviour
     {
         [SerializeField] private DataManagerScript dataManager;
+        [SerializeField] private InputManagerScript inputManager;
 
         [SerializeField] private Transform holderWindows;
         [SerializeField] private GameObject prefabWindowStock;
@@ -28,6 +30,7 @@ namespace Assets.Scripts.Engine
             windScript.OnRefreshListCall += WindScript_OnRefreshListCall;
 
             windScript.lastResetDate = dataManager.LastResetDate;
+            windScript.inputManager = inputManager;
             windScript.StockData = dataManager.StockData;
 
             dataManager.OnDataUpdated += () =>

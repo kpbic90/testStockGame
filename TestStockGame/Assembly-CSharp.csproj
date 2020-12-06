@@ -72,6 +72,10 @@
     <Compile Include="Assets\Scripts\Models\StockItem.cs" />
     <Compile Include="Assets\Scripts\UI\Controls\MultiImageButton.cs" />
     <Compile Include="Assets\Scripts\Engine\StockItemsDrawer.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IInputManager.cs" />
+    <Compile Include="Assets\Scripts\Engine\InputSystem\MobileInputManager.cs" />
+    <Compile Include="Assets\Scripts\Engine\InputSystem\MouseInputManager.cs" />
+    <Compile Include="Assets\Scripts\Engine\InputSystem\InputManagerScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
